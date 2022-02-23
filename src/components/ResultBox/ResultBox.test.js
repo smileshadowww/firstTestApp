@@ -86,8 +86,10 @@ import { screen } from '@testing-library/react';
       for(const testObj of testCases) {
         render(<ResultBox from="USD" to="PLN" amount={testObj.amount} />);
         const output = screen.getByTestId('output');
+
         const stringNegative = (testObj.amount).toString();
         const positiveValue = (stringNegative).replace('-','');
+
         expect(output).toHaveTextContent('-$' + positiveValue + '.00 = ' + 'Wrong value…');
         cleanup();
       }
@@ -102,8 +104,10 @@ import { screen } from '@testing-library/react';
       for(const testObj of testCases) {
         render(<ResultBox from="PLN" to="USD" amount={testObj.amount} />);
         const output = screen.getByTestId('output');
+
         const stringNegative = (testObj.amount).toString();
         const positiveValue = (stringNegative).replace('-','');
+
         expect(output).toHaveTextContent('-PLN ' + positiveValue + '.00 = ' + 'Wrong value…');
         cleanup();
       }
