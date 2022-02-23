@@ -76,7 +76,7 @@ import { screen } from '@testing-library/react';
         cleanup();
       }
     });
-    it('should render wrong value', () => {
+    it('should render wrong value in negative USD to PLN', () => {
       const testCases = [
         { amount: -10 },
         { amount: -30 },
@@ -94,7 +94,7 @@ import { screen } from '@testing-library/react';
         cleanup();
       }
     });
-    it('should render wrong value', () => {
+    it('should render wrong value in negative PLN to USD', () => {
       const testCases = [
         { amount: -10 },
         { amount: -30 },
